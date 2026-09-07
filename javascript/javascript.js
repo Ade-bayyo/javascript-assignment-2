@@ -9,12 +9,11 @@ document.addEventListener('DOMContentLoaded', function () {
     departmentSelect.addEventListener('change', function () {
         const departmentValue = departmentSelect.value;
 
-        // hide all three first
+
         scienceGroup.classList.remove('active');
         artGroup.classList.remove('active');
         commercialGroup.classList.remove('active');
 
-        // then show only the one that was picked
         if (departmentValue === 'Science') {
             scienceGroup.classList.add('active');
         } else if (departmentValue === 'Art') {
