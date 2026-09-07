@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-    // ---------- Department dropdown: show the right subject group ----------
     const departmentSelect = document.querySelector('#department');
 
     const scienceGroup = document.querySelector('.subject-group--science');
@@ -25,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // ---------- Form submit: build the result ----------
+
     const formm = document.querySelector('#mainform');
 
     formm.addEventListener('submit', function (event) {
@@ -70,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const commercial_officepractice_grade = document.querySelector('#commercial-officepracticegrade').value;
         const commercial_insurance_grade = document.querySelector('#commercial-insurancegrade').value;
 
-        // ---------- Fill in the candidate info ----------
+
         document.querySelector('#resultfullname').innerText = `${student_surname} ${student_firstname} ${student_middlename}`;
         document.querySelector('#resultexamnumber').innerText = examination_number;
         document.querySelector('#resultsex').innerText = student_sex;
@@ -78,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelector('#resultcentre').innerText = student_centre;
         document.querySelector('#resultdepartment').innerText = student_department;
 
-        // ---------- Pick the right 9 subjects based on department ----------
+
         let subjectsAndGrades = [];
 
         if (student_department === 'Science') {
@@ -119,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function () {
             ];
         }
 
-        // ---------- Build the subject/grade rows ----------
+
         const resultSubjectsBody = document.querySelector('#resultsubjectsbody');
         resultSubjectsBody.innerHTML = '';
 
@@ -132,12 +131,12 @@ document.addEventListener('DOMContentLoaded', function () {
             resultSubjectsBody.appendChild(row);
         });
 
-        // ---------- Hide the form, reveal the result ----------
+
         formm.classList.add('hidden');
         document.querySelector('#resultsection').classList.remove('hidden');
     });
 
-    // ---------- Back to Form button: hide result, show form again ----------
+
     const backToFormBtn = document.querySelector('#backtoform_btn');
 
     backToFormBtn.addEventListener('click', function () {
