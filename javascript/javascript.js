@@ -3,14 +3,26 @@ document.addEventListener('DOMContentLoaded', function () {
     // ---------- Department dropdown: show the right subject group ----------
     const departmentSelect = document.querySelector('#department');
 
+    const scienceGroup = document.querySelector('.subject-group--science');
+    const artGroup = document.querySelector('.subject-group--art');
+    const commercialGroup = document.querySelector('.subject-group--commercial');
+
     departmentSelect.addEventListener('change', function () {
         const departmentValue = departmentSelect.value;
 
-        document.querySelectorAll('.subject-group').forEach(function (group) {
-            group.classList.remove('active');
-        });
+        // hide all three first
+        scienceGroup.classList.remove('active');
+        artGroup.classList.remove('active');
+        commercialGroup.classList.remove('active');
 
-        document.querySelector('.subject-group--' + departmentValue).classList.add('active');
+        // then show only the one that was picked
+        if (departmentValue === 'Science') {
+            scienceGroup.classList.add('active');
+        } else if (departmentValue === 'Art') {
+            artGroup.classList.add('active');
+        } else if (departmentValue === 'Commercial') {
+            commercialGroup.classList.add('active');
+        }
     });
 
     // ---------- Form submit: build the result ----------
@@ -69,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // ---------- Pick the right 9 subjects based on department ----------
         let subjectsAndGrades = [];
 
-        if (student_department === 'science') {
+        if (student_department === 'Science') {
             subjectsAndGrades = [
                 ['English Language', science_english_grade],
                 ['Mathematics', science_mathematics_grade],
@@ -81,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 ['Geography', science_geography_grade],
                 ['Agricultural Science', science_agricultural_grade]
             ];
-        } else if (student_department === 'art') {
+        } else if (student_department === 'Art') {
             subjectsAndGrades = [
                 ['English Language', art_english_grade],
                 ['Mathematics', art_mathematics_grade],
@@ -93,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 ['History', art_history_grade],
                 ['Geography', art_geography_grade]
             ];
-        } else if (student_department === 'commercial') {
+        } else if (student_department === 'Commercial') {
             subjectsAndGrades = [
                 ['English Language', commercial_english_grade],
                 ['Mathematics', commercial_mathematics_grade],
@@ -120,8 +132,17 @@ document.addEventListener('DOMContentLoaded', function () {
             resultSubjectsBody.appendChild(row);
         });
 
-        // ---------- Finally, reveal the result section ----------
-        document.querySelector('.result-section').classList.remove('hidden');
+        // ---------- Hide the form, reveal the result ----------
+        formm.classList.add('hidden');
+        document.querySelector('#resultsection').classList.remove('hidden');
+    });
+
+    // ---------- Back to Form button: hide result, show form again ----------
+    const backToFormBtn = document.querySelector('#backtoform_btn');
+
+    backToFormBtn.addEventListener('click', function () {
+        document.querySelector('#resultsection').classList.add('hidden');
+        formm.classList.remove('hidden');
     });
 
 });
