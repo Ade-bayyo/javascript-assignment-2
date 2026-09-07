@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student WAEC Result Checker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/assignment2.css">
+<script src="javascript/javascript.js" defer></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <h1 class="site-header__title">Student WAEC Result Checker</h1>
+    <p class="site-header__subtitle">Enter your details below to view your WASSCE result</p>
+  </header>
+
+  <main class="page">
+
+    <form class="card form-card" id="mainform">
+
+      <!-- Personal Information -->
+      <section class="section-block">
+        <div class="section-block__heading">
+          <span class="section-block__bar"></span>
+          <h2 class="section-block__title">Candidate's Information</h2>
+        </div>
+        <p class="section-block__hint">Enter the candidate's personal details exactly as registered.</p>
+
+        <div class="form-grid">
+
+          <div class="field">
+            <label for="">Examination Number</label>
+            <input type="text" id="examnumber" class="input-exam-number" placeholder="e.g. 4206827024">
+          </div>
+
+          <div class="field">
+            <label for="">Sex</label>
+            <select id="sex" class="select-sex">
+              <option value="" selected disabled>Select sex</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="">Surname</label>
+            <input type="text" id="surname" class="input-surname" placeholder="e.g. Muhammad">
+          </div>
+
+          <div class="field">
+            <label for="">First Name</label>
+            <input type="text" id="firstname" class="input-first-name" placeholder="e.g. Usman">
+          </div>
+
+          <div class="field">
+            <label for="">Middle Name</label>
+            <input type="text" id="middlename" class="input-middle-name" placeholder="e.g. Hauwa">
+          </div>
+
+          <div class="field">
+            <label for="">Examination</label>
+            <input type="text" id="examination" class="input-examination" placeholder="e.g. WASSCE for School Candidates 2026">
+          </div>
+
+          <div class="field field--wide">
+            <label for="">Centre</label>
+            <input type="text" id="centre" class="input-centre" placeholder="e.g. Sani Yahaya Memorial School Kano">
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Academic Information -->
+      <section class="section-block">
+        <div class="section-block__heading">
+          <span class="section-block__bar"></span>
+          <h2 class="section-block__title">Subject / Grade</h2>
+        </div>
+        <p class="section-block__hint">Choose a department to load the required subjects, then enter the score for each one.</p>
+
+        <div class="field department-field">
+          <label for="">Department</label>
+          <select id="department" class="select-department">
+            <option value="" selected>Select department</option>
+            <option value="science">Science</option>
+            <option value="art">Art</option>
+            <option value="commercial">Commercial</option>
+          </select>
+        </div>
+
+        <!-- Science subject group -->
+        <div class="subject-group subject-group--science">
+          <div class="subject-group__list">
+
+            <div class="subject-row">
+              <span class="subject-row__name">English Language</span>
+              <input type="text" id="science-englishgrade" class="input-grade" placeholder="e.g. A1">
+            </div>
+
+            <div class="subject-row">
+              <span class="subject-row__name">Mathematics</span>
+              <input type="text" id="science-mathematicsgrade" class="input-grade" placeholder="e.g. A1">
+            </div>
+
+            <div class="subject-row">
+              <span class="subject-row__name">Civic Education</span>
+              <input type="text" id="science-civicgrade" class="input-grade" placeholder="e.g. A1">
+            </div>
+
+            <div class="subject-row">
+              <span class="subject-row__name">Physics</span>
+              <input type="text" id="science-physicsgrade" class="input-grade" placeholder="e.g. A1">
+            </div>
+
+            <div class="subject-row">
+              <span class="subject-row__name">Chemistry</span>
+              <input type="text" id="science-chemistrygrade" class="input-grade" placeholder="e.g. A1">
+            </div>
+
+            <div class="subject-row">
+              <span class="subject-row__name">Biology</span>
+              <input type="text" id="science-biologygrade" class="input-grade" placeholder="e.g. A1">
+            </div>
+
+            <div class="subject-row">
+              <span class="subject-row__name">Further Mathematics</span>
+              <input type="text" id="science-furthermathematicsgrade" class="input-grade" placeholder="e.g. A1">
+            </div>
+
+            <div class="subject-row">
+              <span class="subject-row__name">Geography</span>
+              <input type="text" id="science-geographygrade" class="input-grade" placeholder="e.g. A1">
+            </div>
+
+            <div class="subject-row">
+              <span class="subject-row__name">Agricultural Science</span>
+              <input type="text" id="science-agriculturalgrade" class="input-grade" placeholder="e.g. A1">
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Art subject group -->
+        <div class="subject-group subject-group--art">
+          <div class="subject-group__list">
+
+            <div class="subject-row">
+              <span class="subject-row__name">English Language</span>
+              <input type="text" id="art-englishgrade" class="input-grade" placeholder="e.g. A1">
+            </div>
+
+            <div class="subject-row">
+              <span class="subject-row__name">Mathematics</span>
+              <input type="text" id="art-mathematicsgrade" class="input-grade" placeholder="e.g. A1">
+            </div>
+
+            <div class="subject-row">
+              <span class="subject-row__name">Civic Education</span>
+              <input type="text" id="art-civicgrade" class="input-grade" placeholder="e.g. A1">
+            </div>
+
+            <div class="subject-row">
+              <span class="subject-row__name">Literature in English</span>
+              <input type="text" id="art-literaturegrade" class="input-grade" placeholder="e.g. A1">
+            </div>
+
+            <div class="subject-row">
+              <span class="subject-row__name">Government</span>
+              <input type="text" id="art-governmentgrade" class="input-grade" placeholder="e.g. A1">
+            </div>
+
+            <div class="subject-row">
+              <span class="subject-row__name">CRS / IRS</span>
+              <input type="text" id="art-crsgrade" class="input-grade" placeholder="e.g. A1">
+            </div>
+
+            <div class="subject-row">
+              <span class="subject-row__name">Fine Arts</span>
+              <input type="text" id="art-fineartsgrade" class="input-grade" placeholder="e.g. A1">
+            </div>
+
+            <div class="subject-row">
+              <span class="subject-row__name">History</span>
+              <input type="text" id="art-historygrade" class="input-grade" placeholder="e.g. A1">
+            </div>
+
+            <div class="subject-row">
+              <span class="subject-row__name">Geography</span>
+              <input type="text" id="art-geographygrade" class="input-grade" placeholder="e.g. A1">
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Commercial subject group -->
+        <div class="subject-group subject-group--commercial">
+          <div class="subject-group__list">
+
+            <div class="subject-row">
+              <span class="subject-row__name">English Language</span>
+              <input type="text" id="commercial-englishgrade" class="input-grade" placeholder="e.g. A1">
+            </div>
+
+            <div class="subject-row">
+              <span class="subject-row__name">Mathematics</span>
+              <input type="text" id="commercial-mathematicsgrade" class="input-grade" placeholder="e.g. A1">
+            </div>
+
+            <div class="subject-row">
+              <span class="subject-row__name">Civic Education</span>
+              <input type="text" id="commercial-civicgrade" class="input-grade" placeholder="e.g. A1">
+            </div>
+
+            <div class="subject-row">
+              <span class="subject-row__name">Economics</span>
+              <input type="text" id="commercial-economicsgrade" class="input-grade" placeholder="e.g. A1">
+            </div>
+
+            <div class="subject-row">
+              <span class="subject-row__name">Financial Accounting</span>
+              <input type="text" id="commercial-financialaccountinggrade" class="input-grade" placeholder="e.g. A1">
+            </div>
+
+            <div class="subject-row">
+              <span class="subject-row__name">Commerce</span>
+              <input type="text" id="commercial-commercegrade" class="input-grade" placeholder="e.g. A1">
+            </div>
+
+            <div class="subject-row">
+              <span class="subject-row__name">Marketing</span>
+              <input type="text" id="commercial-marketinggrade" class="input-grade" placeholder="e.g. A1">
+            </div>
+
+            <div class="subject-row">
+              <span class="subject-row__name">Office Practice</span>
+              <input type="text" id="commercial-officepracticegrade" class="input-grade" placeholder="e.g. A1">
+            </div>
+
+            <div class="subject-row">
+              <span class="subject-row__name">Insurance</span>
+              <input type="text" id="commercial-insurancegrade" class="input-grade" placeholder="e.g. A1">
+            </div>
+
+          </div>
+        </div>
+
+      </section>
+
+      <div class="form-actions">
+        <button type="submit" class="check-result-btn" id="checkresult_btn">Check Result</button>
+      </div>
+
+    </form>
+
+    <!-- Result section -->
+    <section class="result-section hidden" id="resultsection">
+
+      <div class="result-heading">
+        <p class="result-heading__title">Here's your result</p>
+        <h2 class="result-fullname" id="resultfullname"></h2>
+      </div>
+
+      <div class="result-card">
+        <div class="result-card__inner">
+
+          <div class="result-details">
+            <div class="result-details__item">
+              <span class="result-details__label">Examination Number</span>
+              <span class="result-details__value" id="resultexamnumber"></span>
+            </div>
+            <div class="result-details__item">
+              <span class="result-details__label">Sex</span>
+              <span class="result-details__value" id="resultsex"></span>
+            </div>
+            <div class="result-details__item">
+              <span class="result-details__label">Examination</span>
+              <span class="result-details__value" id="resultexamination"></span>
+            </div>
+            <div class="result-details__item">
+              <span class="result-details__label">Centre</span>
+              <span class="result-details__value" id="resultcentre"></span>
+            </div>
+            <div class="result-details__item">
+              <span class="result-details__label">Department</span>
+              <span class="result-details__value" id="resultdepartment"></span>
+            </div>
+          </div>
+
+          <table class="result-subjects">
+            <thead>
+              <tr>
+                <th>Subject</th>
+                <th>Grade</th>
+              </tr>
+            </thead>
+            <tbody class="result-subjects__body" id="resultsubjectsbody">
+              <!-- subject/grade rows go here -->
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+</body>
+</html>
