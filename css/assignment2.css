@@ -393,6 +393,9 @@ h1, h2, h3{
   border-bottom: 1px solid var(--line);
   font-size: 15px;
 }
+.result-subjects tbody td:last-child{
+  text-align: right;
+}
 
 .result-subjects tbody tr:last-child td{
   border-bottom: none;
